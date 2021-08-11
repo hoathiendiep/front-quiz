@@ -1,0 +1,271 @@
+<app-navbar></app-navbar>
+<div class="main">
+    <div class="container">
+        <div class="row mx-auto d-flex justify-content-around">
+            <div class="col-md-3 col-xs-6 option pt-3  mt-3">
+                <a [routerLink]="['/detail']" routerLinkActive="router-link-active" class="backbtn"><span><</span> Back</a>
+                <hr class="dropdown-divider mt-3">           
+    
+                <pre></pre>
+                <div style="text-align: center;">
+                    <div class="mb-4" style="font-size: 1.3rem; font-weight: 600;"><img src="../../assets/img/sync.svg"/>Spaced Repetition Learning</div>
+                    <h4>6</h4><span>Due</span><pre></pre>
+                    <img src="../../assets/img/arrow-down.svg"/>
+                    <h4>10</h4><span>New</span><pre></pre>
+                 <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-info  mt-5"  data-bs-toggle="modal" data-bs-target="#setting">⚙️ Settings</button><pre></pre>
+                                    <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-info mb-2"  data-bs-toggle="modal" data-bs-target="#restartConfirm">🔄 Restart</button>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="setting" tabindex="-1"  aria-labelledby="settingLabel" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="restartConfirmLabel">Setting</h5>
+                              </div>
+                              <div class="modal-body">
+                                <nav>
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">New cards</button>
+                                      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Reviews</button>
+                                      <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Lapses</button>
+                                    </div>
+                                  </nav>
+                                  <div class="tab-content" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                        <div class="row d-flex justify-content-center align-items-center mt-1">
+                                            <div class="col ">
+                                              <label class="col-form-label">Steps (in minutes)</label>
+                                            </div>
+                                            <div class="col">
+                                              <input type="number" id="step1" min="1" class="form-control" value="1" aria-describedby="passwordHelpInline">
+                                            </div>
+                                            <div class="col">
+                                                <input type="number" id="step2" min="1" class="form-control" value="10" aria-describedby="passwordHelpInline">
+                                            </div>
+                                          </div>
+                                          <div class="row d-flex justify-content-center align-items-center mt-1">
+                                            <div class="col ">
+                                              <label class="col-form-label">Order</label>
+                                            </div>
+                                            <div class="col form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                  Default order
+                                                </label>
+                                            </div>
+                                            <div class="col form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                  Random order
+                                                </label>                                            
+                                            </div>
+                                          </div>
+                                          <div class="row mt-1">
+                                            <div class="col-4">
+                                              <label class="col-form-label">New cards/day</label>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="number" id="newNum" min="1" class="form-control" value="1">
+                                            </div>
+                                          </div>    
+                                          <div class="row mt-1">
+                                            <div class="col-4">
+                                              <label class="col-form-label">Graduating interval</label>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="number" id="gradivl" min="1" class="form-control" value="1">
+                                            </div>
+                                            <div class="col-auto">
+                                                <span id="passwordHelpInline" class="form-text">
+                                                  days
+                                                </span>
+                                              </div>
+                                          </div>    
+                                          <div class="row mt-1">
+                                            <div class="col-4">
+                                              <label class="col-form-label">Easy interval</label>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="number" id="easyivl" min="1" class="form-control" value="4">
+                                            </div>
+                                            <div class="col-auto">
+                                                <span id="passwordHelpInline" class="form-text">
+                                                  days
+                                                </span>
+                                              </div>
+                                          </div>  
+                                          <div class="row mt-1">
+                                            <div class="col-4">
+                                              <label class="col-form-label">Starting ease</label>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="number" id="ease" min="1" class="form-control" value="130">
+                                            </div>
+                                            <div class="col-auto">
+                                                <span id="passwordHelpInline" class="form-text">
+                                                  %
+                                                </span>
+                                              </div>
+                                          </div>                                                                                                                                                                      
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                        <div class="row mt-1">
+                                            <div class="col-4">
+                                              <label class="col-form-label">Maximum reviews/day</label>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="number" id="maxReview" min="1" class="form-control" value="200">
+                                            </div>
+                                          </div>    
+                                          <div class="row mt-1">
+                                            <div class="col-4">
+                                              <label class="col-form-label">Easy bonus</label>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="number" id="bonus" min="1" class="form-control" value="130">
+                                            </div>
+                                            <div class="col-auto">
+                                                <span id="passwordHelpInline" class="form-text">
+                                                  %
+                                                </span>
+                                              </div>
+                                          </div>
+                                          <div class="row mt-1">
+                                            <div class="col-4">
+                                              <label class="col-form-label">Interval modifier</label>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="number" id="ivlModifier" min="1" class="form-control" value="100">
+                                            </div>
+                                            <div class="col-auto">
+                                                <span id="passwordHelpInline" class="form-text">
+                                                  %
+                                                </span>
+                                              </div>
+                                          </div>                                                                                              
+                                          <div class="row mt-1">
+                                            <div class="col-4">
+                                              <label class="col-form-label">Maximum interval</label>
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="number" id="maxIvl" min="1" class="form-control" value="36500">
+                                            </div>
+                                            <div class="col-auto">
+                                                <span id="passwordHelpInline" class="form-text">
+                                                  days
+                                                </span>
+                                              </div>
+                                          </div>           
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                        <div class="row mt-1">
+                                            <div class="col-4">
+                                              <label class="col-form-label">Steps (in minutes)</label>
+                                            </div>
+                                            <div class="col-6">
+                                              <input type="number" id="stepLapse" min="1" class="form-control" value="1" aria-describedby="passwordHelpInline">
+                                            </div>
+                                          </div>  
+                                            <div class="row mt-1">
+                                              <div class="col-4">
+                                                <label class="col-form-label">New interval</label>
+                                              </div>
+                                              <div class="col-6">
+                                                  <input type="number" id="newIvl" min="0" class="form-control" value="0">
+                                              </div>
+                                              <div class="col-auto">
+                                                  <span id="passwordHelpInline" class="form-text">
+                                                    %
+                                                  </span>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                              <div class="col-4">
+                                                <label class="col-form-label">Minimum interval</label>
+                                              </div>
+                                              <div class="col-6">
+                                                  <input type="number" id="minIvl" min="1" class="form-control" value="1">
+                                              </div>
+                                              <div class="col-auto">
+                                                  <span id="passwordHelpInline" class="form-text">
+                                                    days
+                                                  </span>
+                                                </div>
+                                            </div>                                                                                              
+                                            <div class="row mt-1">
+                                              <div class="col-4">
+                                                <label class="col-form-label">Leech threshold</label>
+                                              </div>
+                                              <div class="col-6">
+                                                  <input type="number" id="leech" min="1" class="form-control" value="1">
+                                              </div>
+                                              <div class="col-auto">
+                                                  <span id="passwordHelpInline" class="form-text">
+                                                    lapses
+                                                  </span>
+                                                </div>
+                                            </div>              
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="modal-footer d-flex justify-content-evenly">
+                                    <button type="button" class="btn btn-secondary" style="width: 10rem;" data-bs-dismiss="modal">Restore to default</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                      <!-- Modal -->
+                      <div class="modal fade" id="restartConfirm" tabindex="-1" aria-labelledby="restartConfirmLabel" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="restartConfirmLabel">Confirmation</h5>
+                            </div>
+                            <div class="modal-body">
+                              Are you sure to restart ?  
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yes</button>
+                              <button type="button" class="btn btn-primary"  data-bs-dismiss="modal">No</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            </div>
+            <div class="col-md-9 col-xs-6 ">
+                <div class="row d-flex justify-content-center mt-3">
+                        <div class="card">
+                            <div class="row mx-auto mt-3" style="font-size: 1.4rem;height: 66%; overflow: auto;">
+                                Which statement(s) is (are) related to Dimensional Modeling?
+                                A. Captures critical measures
+                                B. Views along dimensions
+                                C. Intuitive to business users
+                                D. All the others                            </div>
+                            <div class="row" style="font-size: 1rem;overflow: auto;">
+                                <div class="multiple">
+                                    <!-- <button type="button" class="btn btn-outline-secondary">A </button>
+                                    <button type="button" class="btn btn-outline-secondary">B</button>
+                                    <button type="button" class="btn btn-outline-secondary">C</button>
+                                    <button type="button" class="btn btn-outline-secondary">D</button> -->
+                                    <div class="input-cont">
+                                        <input type="text" name="name" autocomplete="off" required>
+                                        <label for="name" class="label-name">
+                                            <span class="content-name">
+                                                Answer
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+
+    

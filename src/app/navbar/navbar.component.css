@@ -1,0 +1,25 @@
+.navbar-brand img{
+    height: 3.2em;
+}
+.navbar {
+	padding: 0.8rem;
+}
+
+.navbar-nav li {
+	padding-right: 20px;
+
+}
+.nav-link {
+	font-size: 1.1em !important;
+}
+/* .navbar{
+    background-color: #76d207;
+} */
+
+.bg-custom-1 {
+	background-color: #85144b;
+  }
+  
+  .bg-custom-2 {
+  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  }

@@ -1,0 +1,177 @@
+.container{
+    width: 75%;
+    margin: 0 auto;
+}
+.title{
+    font-size: 1.875rem;
+    word-break: break-word;
+}
+.h1kva8ab {
+    font-weight: 600;
+    font-size: .625rem;
+    -webkit-letter-spacing: .0625rem;
+    -moz-letter-spacing: .0625rem;
+    -ms-letter-spacing: .0625rem;
+    letter-spacing: .0625rem;
+    line-height: 1.1;
+    color: var(--neutral-500-neutral-100);
+}
+.ratingbtn{
+    font-size: .875rem;
+    color: #3ccfcf;
+    text-decoration: none;
+    font-weight: 700;
+}
+.option a{
+    text-decoration: none;
+    margin-bottom: 0.5em;
+}
+.option a img{
+    margin-right: 0.5em;
+}
+
+label {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    display: block;
+    width: 35em;
+    height: 17em;
+    left: 50%;
+    top: 50%;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.card {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+    z-index: 20;
+    border: 2px solid rgba(0, 0, 0, 0.125);
+}
+
+    .card div {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: #FFF;
+        text-align: center;
+        line-height: 200px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 2px;
+    }
+
+    .card .back {
+        background: #222;
+        color: #FFF;
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+    }
+
+label:hover .card {
+    -webkit-transform: rotateX(20deg);
+    transform: rotateX(20deg);
+    box-shadow: 0 20px 20px rgba(50,50,50,.2);
+}
+
+input {
+    display: none;
+}
+
+:checked + .card {
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+}
+
+label:hover :checked + .card {
+    transform: rotateX(160deg);
+    -webkit-transform: rotateX(160deg);
+    box-shadow: 0 20px 20px rgba(255,255,255,.2);
+}
+
+.change {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+  }
+  
+  a.change:hover {
+
+
+    background-color: black;
+    color: white
+  }
+  
+  .previous , .next {
+    background-color: #ddd;
+    color: black;
+  }
+  
+
+  
+  .round {
+    border-radius: 50%;
+  }
+
+  .flashcard{
+    background-color:#fff;
+    width:80%;
+    box-shadow: 0 20px 20px rgba(255,255,255,.2);
+    border-radius: 7px;
+    padding: 1.5em;
+    margin-bottom: 2em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+  }
+
+  .flashcard:hover{
+    box-shadow:0 20px 20px rgb(60 40 40 / 20%);
+  }
+
+.rating label{
+    display: inline;
+}
+.rating{
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+.rating>input {
+    display: none;
+}
+
+.rating>label {
+    width: 28px;
+    font-size: 35px;
+    color: #ff0000;
+    cursor: pointer
+}
+
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+    opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+

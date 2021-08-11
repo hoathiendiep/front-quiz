@@ -1,0 +1,118 @@
+
+.main {
+    height: 100vh;
+    background-color: #f6f7f8;
+}
+.backbtn{
+    text-decoration: none;
+    font-family: monospace;
+    margin-left: .5rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 1.285714285714286;
+    color: #303545;
+}
+.backbtn span{
+    color: #00e2e2;
+    font-size: 1.35rem;
+}
+.backbtn:hover >  span{
+    color: yellow;
+}
+.btn-outline-info:hover{
+    color: #fff;
+}
+.option{
+    background: #fff;
+    box-shadow: 4px 0px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+
+label {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    display: block;
+    width: 50em;
+    height: 25em;
+    left: 50%;
+    top: 50%;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.card {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+    z-index: 20;
+    border: 2px solid rgba(0, 0, 0, 0.125);
+}
+
+    .card div {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: #FFF;
+        text-align: center;
+        line-height: 200px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 2px;
+    }
+
+    .card .back {
+        background: #222;
+        color: #FFF;
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+    }
+
+label:hover .card {
+    -webkit-transform: rotateX(20deg);
+    transform: rotateX(20deg);
+    box-shadow: 0 20px 20px rgba(50,50,50,.2);
+}
+
+input {
+    display: none;
+}
+
+:checked + .card {
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+}
+
+label:hover :checked + .card {
+    transform: rotateX(160deg);
+    -webkit-transform: rotateX(160deg);
+    box-shadow: 0 20px 20px rgba(255,255,255,.2);
+}
+
+.change {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+  }
+  
+  a.change:hover {
+    background-color: yellow;
+    color: white
+  }
+  
+  .previous , .next {
+    background-color: #ddd;
+    color: black;
+  }
+  
+
+  
+  .round {
+    border-radius: 50%;
+  }

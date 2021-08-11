@@ -1,0 +1,83 @@
+
+<app-navbar></app-navbar>
+<div class="container">
+    <form class="mb-3">
+        <div class="form-row  d-flex justify-content-center ">
+            <div class="input-cont">
+                <input type="text" name="title" autocomplete="off" required>
+                <label for="title" class="label-name">
+                    <span class="content-name">
+                        Title
+                    </span>
+                </label>
+            </div>
+        </div>
+        <div class="form-row  d-flex justify-content-center ">
+        <div class="input-cont">
+            <input type="text" name="description" autocomplete="off" required>
+            <label for="description" class="label-name">
+                <span class="content-name">
+                    Short Description
+                </span>
+            </label>
+        </div>
+    </div>
+
+    <div class="container mt-5" style="width: 75%;">
+        <div class="form-row">
+
+            <div *ngFor="let q_a of quest_ans;let i = index" class="card mt-3">
+                <div class="card-header">
+                    <div class="form-row d-flex justify-content-center">
+                        <div class="col">
+                          {{i+1}}
+                        </div>
+                        <div class="col buttonclose">
+                            <!-- Button trigger modal -->
+                          <button type="button" class="btn btn-outline-danger cls" data-bs-toggle="modal" data-bs-target="#deleteConfirm">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                          <!-- Modal -->
+                          <div class="modal fade" id="deleteConfirm" tabindex="-1" aria-labelledby="deleteConfirmLabel" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="deleteConfirmLabel">Confirmation</h5>
+                                </div>
+                                <div class="modal-body">
+                                  Are you sure to delete this card ?  
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="quest_ans.splice(i, 1)">Yes</button>
+                                  <button type="button" class="btn btn-primary"  data-bs-dismiss="modal">No</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="card-body">
+                      <div class="form-row">
+                        <div class="col-md-5 col-xs-12 d-flex justify-content-center m-2">
+                          <textarea type="text" class="form-control" placeholder="Answer">{{q_a.a}}</textarea>
+                        </div>
+                        <div class="col-md-5 col-xs-12 d-flex justify-content-center  m-2">
+                          <textarea type="text" class="form-control" placeholder="Question">{{q_a.q}}</textarea>
+                        </div>
+                        <div class="col-md-1 col-xs-12 d-flex justify-content-center m-2 ">
+                            <button class="btn btn-light" style="border: 2px #d1d1d1 dashed;"><img src="../../assets/img/device-camera.svg"/> Images</button>
+                        </div>
+                      </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    </form>
+    <div class="container d-flex justify-content-center">
+        <button type="button" class="btn btn-secondary btn-lg btn-block" (click)="addCard()">Add new cards</button>
+    </div>
+    <div class="container d-flex justify-content-center mb-5">
+      <a href="#" class="complete">Complete →</a>
+  </div>
+</div>
